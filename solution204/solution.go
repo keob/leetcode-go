@@ -4,7 +4,7 @@ func countPrimes(n int) int {
 	count := 0
 	signs := make([]bool, n)
 
-	if n <= 2 {
+	if n < 2 {
 		return 0
 	}
 
