@@ -16,7 +16,7 @@ func TestCountPrimes(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := countPrimes(tt.n); got != tt.want {
-				t.Errorf("countPrimes() = %v wang %v", got, tt.want)
+				t.Errorf("countPrimes() = %v want %v", got, tt.want)
 			}
 		})
 	}
