@@ -1,21 +1,25 @@
 package solution331
 
-import "strings"
-
 func isValidSerialization(preorder string) bool {
-	nodeArray := strings.Split(preorder, ",")
-	slot := 1
+	n := len(preorder)
+	slots := 1
 
-	for i := 0; i < len(nodeArray); i++ {
-		slot -= 1
-		if slot < 0 {
+	for i := 0; i < n; {
+		if slots == 0 {
 			return false
 		}
-
-		if nodeArray[i] != "#" {
-			slot += 2
+		if preorder[i] == ',' {
+			i++
+		} else if preorder[i] == '#' {
+			slots--
+			i++
+		} else {
+			for i < n && preorder[i] != ',' {
+				i++
+			}
+			slots++
 		}
 	}
 
-	return slot == 0
+	return slots == 0
 }
