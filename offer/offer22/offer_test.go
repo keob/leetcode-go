@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func List2Ints(head *ListNode) []int {
+func list2Ints(head *ListNode) []int {
 	res := []int{}
 
 	for head != nil {
@@ -16,7 +16,7 @@ func List2Ints(head *ListNode) []int {
 	return res
 }
 
-func Ints2List(nums []int) *ListNode {
+func ints2List(nums []int) *ListNode {
 	if len(nums) == 0 {
 		return nil
 	}
@@ -34,7 +34,7 @@ func Ints2List(nums []int) *ListNode {
 func TestGetKthFromEnd(t *testing.T) {
 	tests := []struct {
 		name string
-		head []int
+		list []int
 		k    int
 		want []int
 	}{
@@ -43,9 +43,9 @@ func TestGetKthFromEnd(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			list := Ints2List(tt.head)
-			res := getKthFromEnd(list, tt.k)
-			got := List2Ints(res)
+			head := ints2List(tt.list)
+			res := getKthFromEnd(head, tt.k)
+			got := list2Ints(res)
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("getKthFromEnd() = %v, want %v", got, tt.want)
 			}
