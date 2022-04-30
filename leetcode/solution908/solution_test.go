@@ -2,7 +2,7 @@ package solution908
 
 import "testing"
 
-func TestSmallestRange(t *testing.T) {
+func TestSmallestRangeI(t *testing.T) {
 	tests := []struct {
 		name string
 		nums []int
@@ -16,8 +16,8 @@ func TestSmallestRange(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := smallestRange(tt.nums, tt.k); got != tt.want {
-				t.Errorf("smallestRange() = %d, want %d", got, tt.want)
+			if got := smallestRangeI(tt.nums, tt.k); got != tt.want {
+				t.Errorf("smallestRangeI() = %d, want %d", got, tt.want)
 			}
 		})
 	}

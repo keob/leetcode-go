@@ -1,6 +1,6 @@
 package solution908
 
-func smallestRange(nums []int, k int) int {
+func smallestRangeI(nums []int, k int) int {
 	minNum, maxNum := nums[0], nums[0]
 	for _, num := range nums[1:] {
 		if num < minNum {
