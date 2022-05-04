@@ -12,6 +12,8 @@ func TestConstructRectangle(t *testing.T) {
 		want []int
 	}{
 		{"test 1", 4, []int{2, 2}},
+		{"test 2", 37, []int{37, 1}},
+		{"test 3", 122122, []int{427, 286}},
 	}
 
 	for _, tt := range tests {

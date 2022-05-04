@@ -3,11 +3,9 @@ package solution492
 import "math"
 
 func constructRectangle(area int) []int {
-	width := int(math.Sqrt(float64(area)))
-
-	for area%width > 0 {
-		width--
+	w := int(math.Sqrt(float64(area)))
+	for area%w > 0 {
+		w--
 	}
-
-	return []int{area / width, width}
+	return []int{area / w, w}
 }
